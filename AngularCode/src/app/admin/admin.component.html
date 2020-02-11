@@ -1,0 +1,167 @@
+<!--背景墙-->
+<div class="controlBox" id="shield"></div>
+
+<!--添加用户菜单-->
+<div class="controlMenu" id="addUserShieldMenu">
+  <div class="controlMenuContent">
+    <div class="controlMenuContentRow">
+      <div class="controlMenuCell controlMenuCellFirst "></div>
+      <div class="controlMenuCell controlMenuCellSecond">
+        <button class="closeMenu" (click)="closeChangeAddUserMenu()">
+          <i class="fa fa-times-circle" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="controlMenuContentRow">
+      <div class="controlMenuCell controlMenuCellFirst">名字</div>
+      <div class="controlMenuCell controlMenuCellSecond"><input type="text" [(ngModel)]="addUserData.na" placeholder="输入用户名"></div>
+    </div>
+
+    <div class="controlMenuContentRow">
+      <div class="controlMenuCell controlMenuCellFirst">手机号</div>
+      <div class="controlMenuCell controlMenuCellSecond"><input type="text" [(ngModel)]="addUserData.tel" placeholder="输入用户名"></div>
+    </div>
+
+    <div class="controlMenuContentRow">
+      <div class="controlMenuCell controlMenuCellFirst">邮箱</div>
+      <div class="controlMenuCell controlMenuCellSecond"><input type="text" [(ngModel)]="addUserData.email" placeholder="输入邮箱"></div>
+    </div>
+
+    <div class="controlMenuContentRow">
+      <div class="controlMenuCell controlMenuCellFirst">密码</div>
+      <div class="controlMenuCell controlMenuCellSecond"><input type="text" [(ngModel)]="addUserData.ps" placeholder="输入密码"></div>
+    </div>
+
+    <div class="controlMenuContentRow">
+      <div class="controlMenuCell controlMenuCellFirst">设为管理员</div>
+      <div class="controlMenuCell controlMenuCellSecond"><input type="checkBox" (click)="turnAddUserPower()" id="checkBox"></div>
+    </div>
+
+    <div class="controlMenuContentRow">
+      <div class="controlMenuCell controlMenuCellFirst ">
+      </div>
+      <div class="controlMenuCell controlMenuCellSecond">
+        <button class="changeB" (click)="adminAddUser()">
+          添加
+        </button>
+      </div>
+    </div>
+
+    <p class="changeStatus">状态:{{changeStatus}}</p>
+  </div>
+</div>
+
+<!--修改用户信息菜单-->
+<div class="controlMenu" id="shieldMenu">
+  <div class="controlMenuContent">
+    <div class="controlMenuContentRow">
+      <div class="controlMenuCell controlMenuCellFirst "></div>
+      <div class="controlMenuCell controlMenuCellSecond">
+        <button class="closeMenu" (click)="closeChangeMenu()">
+          <i class="fa fa-times-circle" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="controlMenuContentRow">
+      <div class="controlMenuCell controlMenuCellFirst">ID</div>
+      <div class="controlMenuCell controlMenuCellSecond controlID">{{changeManData.id}}</div>
+    </div>
+
+    <div class="controlMenuContentRow">
+      <div class="controlMenuCell controlMenuCellFirst">名字</div>
+      <div class="controlMenuCell controlMenuCellSecond controlID">{{changeManData.name}}</div>
+    </div>
+
+    <div class="controlMenuContentRow">
+      <div class="controlMenuCell controlMenuCellFirst">手机号</div>
+      <div class="controlMenuCell controlMenuCellSecond"><input type="text" [(ngModel)]="changeManData.tel"></div>
+    </div>
+
+    <div class="controlMenuContentRow">
+      <div class="controlMenuCell controlMenuCellFirst">邮箱</div>
+      <div class="controlMenuCell controlMenuCellSecond"><input type="text" [(ngModel)]="changeManData.email"></div>
+    </div>
+
+    <div class="controlMenuContentRow">
+      <div class="controlMenuCell controlMenuCellFirst">密码</div>
+      <div class="controlMenuCell controlMenuCellSecond"><input type="text" [(ngModel)]="changeManData.password" placeholder="密码不变"></div>
+    </div>
+
+    <div class="controlMenuContentRow">
+      <div class="controlMenuCell controlMenuCellFirst ">
+        <button class="changeB" (click)="adminDeleteUser()">
+          删除用户
+        </button>
+      </div>
+      <div class="controlMenuCell controlMenuCellSecond">
+        <button class="changeB" (click)="adminChangeUserMessage()">
+          修改
+        </button>
+      </div>
+    </div>
+
+    <p class="changeStatus">状态:{{changeStatus}}</p>
+  </div>
+</div>
+
+<div class="adminBox">
+  <div class="adminContent">
+    <div class="adminHeader">
+      <div class="adminCell adminID"><p>ID</p></div>
+      <div class="adminCell adminName"><p>名字</p></div>
+      <div class="adminCell adminTel"><p>手机号</p></div>
+      <div class="adminCell adminEmail"><p>邮箱</p></div>
+      <div class="adminCell adminStatus">用户状态</div>
+      <div class="adminCell adminPower">用户权限</div>
+      <div class="adminCell adminLastLoginTime">最后登录时间</div>
+      <div class="adminCell adminChange"></div>
+    </div>
+    <div class="adminRow" *ngFor="let item of man">
+      <div class="adminCell adminID">{{item.id}}</div>
+      <div class="adminCell adminName">{{item.name}}</div>
+      <div class="adminCell adminTel">{{item.tel}}</div>
+      <div class="adminCell adminEmail">{{item.email}}</div>
+      <div class="adminCell adminStatus" *ngIf="item.status === '1'">在线</div>
+      <div class="adminCell adminStatus" *ngIf="item.status === '0'">离线</div>
+      <div class="adminCell adminPower" *ngIf="item.power === '1'">管理员</div>
+      <div class="adminCell adminPower" *ngIf="item.power === '0'">用户</div>
+      <div class="adminCell adminLastLoginTime">{{item.time}}</div>
+      <div class="adminCell adminChange">
+        <button class="changeButton" (click)="showChangeMenu(item.id,item.name,item.tel,item.email)">修改</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--底部菜单-->
+<div class="bottomMenu">
+  <!--左边菜单-->
+  <div class="bottomLeft">
+    <div class="bottomLeftBox">
+      <img src="../../assets/front/img/maLiAo.jpg" alt="" id="leftBoxHeader">
+    </div>
+
+    <div class="bottomLeftBox">
+      <p id="bottomLeftBoxName">{{loginData.name}}</p>
+    </div>
+
+    <div class="bottomLeftBox">
+      <div class="bottomLeftBoxStatusDot_online"></div>
+      <p class="bottomLeftBoxStatus_offline">管理员</p>
+    </div>
+  </div>
+  <!--右边菜单-->
+  <div class="bottomRight">
+    <div class="bottomRightBox">
+      <i class="fa fa-plus" aria-hidden="true"></i>
+      <p class="bottomRightBoxText" (click)="showAddUserMenu()">添加用户</p>
+    </div>
+    <div class="bottomRightBox">
+      <i class="fa fa-sign-out" aria-hidden="true"></i>
+      <p class="bottomRightBoxText" (click)="logout()">注销</p>
+    </div>
+
+  </div>
+</div>

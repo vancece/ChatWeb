@@ -1,0 +1,212 @@
+<div class="box">
+  <!--聊天窗口-->
+  <div class="chat" >
+  <!--  左边整体模块-->
+  <div class="leftBox">
+    <!--    查找联系人模块-->
+    <div class="searchContact">
+      <label for="searchContactInput"></label>
+      <input type="text" id="searchContactInput" placeholder="输入搜索内容">
+      <i class="fa fa-search" aria-hidden="true" id="searchIcon"></i>
+    </div>
+
+    <!--    联系人容器-->
+    <div class="contact">
+
+      <!--      联系人小模块-->
+      <div class="contactBox" *ngFor="let item of linkmanData">
+        <div class="contactPeople" (click)="changeChatBox(item.id,item.name,item.status)" *ngIf="loginData.uid != item.id">
+          <!--        联系人小模块行-->
+          <div class="contactRow">
+            <!--          联系人小模块头像-->
+            <div class="contactHeader">
+              <img src="../../assets/front/img/maLiAo.jpg" alt="" class="header">
+            </div>
+            <!--          联系人小模块信息-->
+            <div class="contactMessage">
+              <p class="contactName">{{item.name}}</p>
+              <i class="fa fa-circle contactMessageOffline" aria-hidden="true" *ngIf="item.status=='0'"></i>
+              <i class="fa fa-circle contactMessageOnline" aria-hidden="true" *ngIf="item.status=='1'"></i>
+              <p class="contactStatus" *ngIf="item.status=='0'">离线</p>
+              <p class="contactStatus" *ngIf="item.status=='1'">在线</p>
+
+              <div class="unreadMessage" *ngIf="item.unread=='1'"></div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+  <!--右边整体模块-->
+  <div class="rightBox">
+    <!-- 头部信息-->
+    <div class="messageHeader">
+      <div class="messageHeaderRow">
+        <!--        1.-->
+        <div class="messageHeaderImg">
+          <img src="../../assets/front/img/maLiAo.jpg" alt="">
+        </div>
+        <!--        2.-->
+        <div class="messageHeaderStatus">
+          <p id="statusName">{{headerName}}</p>
+          <p id="statusLatestSendTime">最后登录时间: {{lastLoginTime}}</p>
+        </div>
+        <!--        3.-->
+        <div class="messageHeaderIcon" *ngIf="isOnline">
+          <i class="fa fa-circle HeaderIconOnline" aria-hidden="true"></i>
+          <p class="messageHeaderIconStatus">在线</p>
+        </div>
+
+        <div class="messageHeaderIcon" *ngIf="!isOnline">
+          <i class="fa fa-circle HeaderIconOffline" aria-hidden="true"></i>
+          <p class="messageHeaderIconStatus">离线</p>
+        </div>
+      </div>
+    </div>
+    <!-- 聊天框-->
+    <div class="messageBox" id="messageBox">
+      <div *ngFor="let item of messageData;let i = index">
+        <!-- 发送者信息块-->
+        <div class="msgSender" *ngIf="messageData[i].sender == chatId && messageData[i].type == '0'">
+          <!--        聊天信息-->
+          <div class="msgSenderInformation">
+            <div class="msgSenderInformationRow">
+              <div class="msgSenderInformationCell msgSenderInformationCellImg">
+                <img src="../../assets/front/img/maLiAo.jpg" alt=""/></div>
+              <div class="msgSenderInformationCell msgSenderInformationCellInformation">
+                <p class="msgSenderName">{{senderName}}</p>
+                <p class="msgSenderDate">{{messageData[i].time}}</p>
+              </div>
+            </div>
+          </div>
+          <!--        发送人内容主体-->
+          <div class="megSenderBody">
+            <p class="senderMsg">{{messageData[i].msg}}</p>
+          </div>
+        </div>
+        <!-- 接受者信息块-->
+        <div class="msgReceiver" *ngIf="messageData[i].receiver == chatId && messageData[i].type == '0'">
+          <!-- 聊天信息-->
+          <div class="msgReceiverInformation">
+            <div class="msgReceiverInformationRow">
+              <!-- 占位作用-->
+              <div class="msgReceiverInformationCell msgVacant"></div>
+              <div class="msgReceiverInformationCell msgSenderInformationCellInformation">
+                <p class="msgSenderName">{{loginData.name}}</p>
+                <p class="msgSenderDate">{{messageData[i].time}}</p>
+              </div>
+              <div class="msgReceiverInformationCell msgSenderInformationCellImg">
+                <img src="../../assets/front/img/maLiAo.jpg" alt=""/>
+              </div>
+            </div>
+          </div>
+          <!-- 接收人人内容主体-->
+          <div class="megReceiverBody">
+            <p class="senderMsg">{{messageData[i].msg}}</p>
+          </div>
+          <div class="clearFloat"></div>
+        </div>
+        <!-- 发送者图片块-->
+        <div class="msgSender" *ngIf="messageData[i].sender == chatId && messageData[i].type == '1'">
+          <!--        聊天信息-->
+          <div class="msgSenderInformation">
+            <div class="msgSenderInformationRow">
+              <div class="msgSenderInformationCell msgSenderInformationCellImg">
+                <img src="../../assets/front/img/maLiAo.jpg" alt=""/></div>
+              <div class="msgSenderInformationCell msgSenderInformationCellInformation">
+                <p class="msgSenderName">{{senderName}}</p>
+                <p class="msgSenderDate">{{messageData[i].time}}</p>
+              </div>
+            </div>
+          </div>
+          <!--        发送人内容主体-->
+          <div class="megSenderBody">
+            <div class="imgBoxer">
+              <img src="{{messageData[i].msg}}" alt=""></div>
+          </div>
+        </div>
+        <!-- 接受者图片块-->
+        <div class="msgReceiver" *ngIf="messageData[i].receiver == chatId && messageData[i].type == '1'">
+          <!-- 聊天信息-->
+          <div class="msgReceiverInformation">
+            <div class="msgReceiverInformationRow">
+              <!-- 占位作用-->
+              <div class="msgReceiverInformationCell msgVacant"></div>
+              <div class="msgReceiverInformationCell msgSenderInformationCellInformation">
+                <p class="msgSenderName">{{loginData.name}}</p>
+                <p class="msgSenderDate">{{messageData[i].time}}</p>
+              </div>
+              <div class="msgReceiverInformationCell msgSenderInformationCellImg">
+                <img src="../../assets/front/img/maLiAo.jpg" alt=""/>
+              </div>
+            </div>
+          </div>
+          <!-- 接收人人内容主体-->
+          <div class="megReceiverBody">
+            <div class="imgBoxer">
+              <img src="{{messageData[i].msg}}" alt=""/></div>
+          </div>
+          <div class="clearFloat"></div>
+        </div>
+      </div>
+    </div>
+    <!--    输入框-->
+    <div class="messageInputBox">
+      <label for="messageInput"></label>
+      <textarea id="messageInput" autofocus maxlength="210" placeholder="请输入内容" [(ngModel)]="message"></textarea>
+      <div id="messageInputMenu">
+        <input type="file" id="imgFile" accept="image/*" (change)="inputFileChange()">
+        <label for="imgFile" id="messageInputMenuPhotoIcon">
+          <i class="fa fa-picture-o" aria-hidden="true"></i>
+        </label>
+        <p id="imgNameStatus">{{imgName}}</p>
+        <button id="submitButton" (click)="sendMessage()">
+          <i class="fa fa-paper-plane" aria-hidden="true"></i>
+          发送
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+  <!--底部菜单栏目-->
+  <div class="bottomMenu">
+  <!--左边菜单-->
+  <div class="bottomLeft">
+    <div class="bottomLeftBox">
+      <img src="../../assets/front/img/maLiAo.jpg" alt="" id="leftBoxHeader">
+    </div>
+
+    <div class="bottomLeftBox">
+      <p id="bottomLeftBoxName">{{loginData.name}}</p>
+    </div>
+
+    <div class="bottomLeftBox" *ngIf="userStatus === '1'">
+      <div class="bottomLeftBoxStatusDot_online"></div>
+      <p class="bottomLeftBoxStatus_online">在线</p>
+    </div>
+    <div class="bottomLeftBox" *ngIf="userStatus === '0'">
+      <div class="bottomLeftBoxStatusDot_offline"></div>
+      <p class="bottomLeftBoxStatus_offline">隐身</p>
+    </div>
+  </div>
+  <!--右边菜单-->
+  <div class="bottomRight">
+    <div class="bottomRightBox" (click)="changeStatus()">
+      <i class="fa fa-eye-slash" aria-hidden="true"></i>
+      <p class="bottomRightBoxText">隐身/在线</p>
+    </div>
+    <div class="bottomRightBox" (click)="clearCookieAndLogout()">
+      <i class="fa fa-sign-out" aria-hidden="true"></i>
+      <p class="bottomRightBoxText">注销</p>
+    </div>
+    <div class="bottomRightBox" (click)="logout()">
+      <i class="fa fa-power-off" aria-hidden="true"></i>
+      <p class="bottomRightBoxText" >退出</p>
+    </div>
+
+  </div>
+</div>
+</div>

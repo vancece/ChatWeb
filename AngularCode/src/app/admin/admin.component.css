@@ -1,0 +1,345 @@
+@import '~font-awesome/css/font-awesome.css';
+
+#shield {
+  display: none;
+}
+
+#shieldMenu {
+  display: none;
+}
+
+/*遮盖盒子*/
+.controlBox {
+  min-height: 1080px;
+  width: 100%;
+  top: 0;
+  position: fixed;
+  z-index: 10;
+  background-color: #dfdfdf;
+  opacity: 50%;
+}
+
+/*控制菜单*/
+.controlMenu {
+  position: fixed;
+  z-index: 11;
+  background: none;
+  min-height: 100px;
+  width: 100%;
+  height: auto;
+}
+
+.controlMenuContent {
+  border-radius: 5px;
+  box-shadow: 2px 2px 4px #dfdfdf;
+  font-size: 15px;
+  color: #dfdfdf;
+  padding: 0 10px 20px 10px;
+  background-color: #5E5E5E;
+  display: table;
+  margin: 60px auto 0 auto;
+}
+
+.controlMenuContentRow {
+  display: table-row;
+  transition: color 0.15s;
+}
+
+.controlMenuContentRow:hover {
+  color: #96BB00;
+}
+
+.controlMenuContentHeader {
+
+}
+
+.controlMenuCell {
+  padding: 10px 20px;
+  display: table-cell;
+}
+
+/*信息栏目*/
+.adminBox {
+  display: block;
+  width: 100%;
+  height: auto;
+  padding: 60px 0 0 0;
+}
+
+.adminContent {
+  border-collapse: collapse;
+  border-radius: 4px;
+  display: table;
+  width: 1200px;
+  height: auto;
+  margin: 0 auto;
+  border: 1px solid #dfdfdf;
+  box-shadow: 2px 2px 4px #dfdfdf;
+}
+
+.adminHeader, .adminRow {
+  display: table-row;
+}
+
+.adminCell {
+  text-align: center;
+  display: table-cell;
+}
+
+.adminCell p {
+  padding: 10px;
+}
+
+.adminHeader {
+  cursor: default;
+  font-size: 16px;
+  transition: color 0.15s;
+}
+
+.adminHeader:hover {
+  color: #96BB00;
+}
+
+.adminRow {
+  cursor: default;
+  transition: color 0.2s;
+  color: #5E5E5E;
+  font-size: 15px;
+}
+
+.adminRow:nth-child(odd) {
+  background-color: #F7F7F7;
+}
+
+.adminRow:nth-child(even) {
+  background-color: white;
+}
+
+.adminRow:hover {
+  color: black;
+}
+
+.adminRow .adminCell {
+  transition: color 0.15s;
+  padding: 10px;
+}
+
+.adminRow .adminCell:hover {
+  color: orange;
+}
+
+.boxer {
+  width: 700px;
+}
+
+.changeButton {
+  outline: none;
+  font-size: 15px;
+  letter-spacing: 0.15em;
+  background: none;
+  border: none;
+  transition: background-color 0.2s;
+  cursor: pointer;
+  padding: 5px 20px;
+  border-radius: 5px;
+}
+
+.changeButton:hover {
+  color: white;
+  background-color: #96BB00;
+}
+
+.closeMenu {
+  transition: color 0.15s;
+  outline: none;
+  color: #dfdfdf;
+  background: none;
+  font-size: 20px;
+  border: none;
+  padding: 5px 10px;
+  float: right;
+  cursor: pointer;
+}
+
+.closeMenu:hover {
+  color: white;
+}
+
+.closeMenu:active {
+  color: #96BB00;
+}
+
+.controlMenuContentHeader {
+  color: white !important;
+}
+
+.controlMenuCell input {
+  color: white;
+  padding: 3px 10px;
+  width: 200px;
+  background: none;
+  border: 1px solid #5E5E5E;
+  outline: none;
+  font-size: 15px;
+  letter-spacing: 0.1em;
+  border-radius: 5px;
+}
+
+.controlMenuCell input:hover {
+  border: 1px solid #96BB00;
+}
+
+.controlID {
+  padding: 3px 30px;
+}
+
+.submitChange {
+
+}
+
+.changeB {
+  float: right;
+  background: none;
+  color: white;
+  border: none;
+  font-size: 17px;
+  letter-spacing: 0.2em;
+  outline: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.15s;
+  cursor: pointer;
+}
+
+.changeB:hover {
+  background: #96BB00;
+}
+
+.changeB:active {
+  background: #999900;
+}
+
+.controlMenuCellFirst {
+  cursor: default;
+  font-weight: bold;
+}
+
+.changeStatus {
+  width: 100px;
+  padding: 0 30px;
+  font-size: 14px;
+  color: #dfdfdf;
+  cursor: default;
+}
+
+#addUserShieldMenu {
+  display: none;
+}
+
+#checkBox {
+  width: 20px;
+  display: inline-block;
+}
+
+/*底部菜单栏*/
+.bottomMenu {
+  padding: 2px 0 0 0;
+  background-color: #777777;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 32px;
+  transition: background-color 0.4s;
+  -moz-transition: background-color 0.4s; /* Firefox 4 */
+  -webkit-transition: background-color 0.4s; /* Safari 和 Chrome */
+  -o-transition: background-color 0.4s; /* Opera */
+}
+
+.bottomMenu:hover {
+  box-shadow: -1px 0 2px 4px #dfdfdf;
+  background-color: #5E5E5E;
+}
+
+.bottomLeft {
+  display: inline-block;
+  color: white;
+  padding: 1px 10px;
+}
+
+.bottomLeftBox {
+  margin: 0 5px;
+  vertical-align: top;
+  display: inline-block;
+}
+
+#leftBoxHeader {
+  padding: 2px;
+  height: 26px;
+  width: 26px;
+  border-radius: 5px;
+}
+
+#bottomLeftBoxName,
+.bottomLeftBoxStatus_online,
+.bottomLeftBoxStatus_offline {
+  transition: 0.15s;
+  cursor: default;
+  display: inline-block;
+  font-size: 15px;
+  padding-top: 5px;
+}
+
+#bottomLeftBoxName:hover,
+.bottomLeftBoxStatus_online:hover,
+.bottomLeftBoxStatus_offline:hover {
+  color: #85989C;
+}
+
+.bottomLeftBoxStatusDot_offline,
+.bottomLeftBoxStatusDot_online {
+  margin-right: 10px;
+  cursor: default;
+  width: 6px;
+  height: 6px;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+.bottomLeftBoxStatusDot_online {
+  background-color: #70b96b;
+}
+
+.bottomLeftBoxStatusDot_offline {
+  background-color: orange;
+}
+
+/*右边*/
+.bottomRight {
+  display: inline-block;
+  vertical-align: top;
+  float: right;
+  color: white;
+}
+
+.bottomRightBox {
+  transition: color 0.1s;
+  height: 22px;
+  padding: 0 5px;
+  cursor: pointer;
+  margin: 5px 5px;
+  display: inline-block;
+}
+
+.bottomRightBox p {
+  letter-spacing: 0.1em;
+  padding: 0 5px;
+  display: inline-block;
+}
+
+.bottomRightBox:hover {
+  color: orange;
+}
+
+.bottomRightBox:active {
+  color: brown;
+}

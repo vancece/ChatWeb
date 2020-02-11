@@ -1,0 +1,197 @@
+@import '~font-awesome/css/font-awesome.css';
+
+.login-boxer {
+  width: 440px;
+  padding: 20px 40px;
+  border: 1px solid black;
+  border-radius: 2px;
+  margin: 60px auto 0 auto;
+  box-shadow: 1px 1px 2px #dfdfdf;
+  transition-duration: .25s;
+}
+
+.login-boxer:hover {
+  box-shadow: 2px 2px 8px #dfdfdf;
+  transition-property: all;
+}
+
+.login-boxer:active {
+  box-shadow: 2px 2px 16px #dfdfdf;
+  transition-property: all;
+}
+
+label {
+  display: inline-block;
+  width: 90px;
+}
+
+input {
+  letter-spacing: 1px;
+  padding: 2px 10px;
+  display: inline-block;;
+  background-color: white;
+  border: 1px solid black;
+  width: 170px;
+  margin-left: 10px;
+  border-radius: 2px;
+}
+
+input:hover, input:focus {
+  border: 1px solid orange;
+  box-shadow: 1px 1px 2px #dfdfdf;
+}
+
+.login-boxer-container {
+  margin: 20px 0;
+}
+
+#input-button {
+  background-color: white;
+  border-radius: 3px;
+  outline: none !important;
+  border: 1px solid black;
+  display: block;
+  margin: 0 auto;
+  width: 80px;
+  padding: 5px 5px;
+  cursor: pointer;
+}
+
+#input-button:hover {
+  border: 1px dotted black;
+}
+
+#input-button:active {
+  color: orange;
+}
+
+#login-logo-container {
+  display: table;
+  width: 100%;
+}
+
+#login-logo-container p {
+  text-align: left;
+  margin-left: 10px;
+}
+
+#login-logo {
+  margin-right: 10px;
+  float: right;
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+}
+
+.login-boxer-container-row {
+  width: 100%;
+  display: table-row;
+}
+
+.login-boxer-container-cell {
+  width: 50%;
+  vertical-align: middle;
+  display: table-cell;
+}
+
+#login-boxer-p {
+  margin-left: 20px;
+}
+
+.input-tips {
+  display: inline-block;
+  margin-left: 10px;
+  color: orange;
+}
+
+#input-firstLine {
+  width: 300px;
+  margin: 40px auto;
+  height: 1px;
+  background-color: black;
+}
+
+#input-secondLine {
+  width: 200px;
+  margin: 30px auto;
+  height: 1px;
+  background-color: black;
+}
+
+#input-thirdLine {
+  width: 100px;
+  margin: 20px auto;
+  height: 1px;
+  background-color: black;
+}
+
+#code_img {
+  border: 1px solid black;
+  border-radius: 2px;
+  display: block;
+  margin-left: 100px;
+  cursor: pointer;
+}
+
+.changeMethodBox {
+  margin-top: 30px;
+  margin-bottom: 40px;
+  display: table;
+  width: 100%;
+}
+
+.changeMethodBoxRow {
+  display: table-row;
+}
+
+.changeMethodBoxCell {
+  text-align: center;
+  display: table-cell;
+}
+
+.changeMethodBoxCell a {
+  padding: 10px 20px;
+  color: black;
+  text-decoration: none;
+  text-underline: none;
+  font-size: 1.15em;
+  outline: none;
+}
+
+.changeMethodBoxCell a:link {
+
+}
+
+.changeMethodBoxCell a:visited {
+}
+
+.changeMethodBoxCell a:hover {
+  color: orange;
+}
+
+.changeMethodBoxCell a:active {
+
+}
+.bottomMessage {
+  color: white;
+  padding: 10px 0;
+  text-align: center;
+  background-color: #5E5E5E;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+
+.valueNum a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.valueNum a:hover {
+  color: orange;
+}
+
+#autoLoginCheckBox {
+  width: 20px;
+  font-size: 19px;
+}

@@ -1,0 +1,641 @@
+@import '~font-awesome/css/font-awesome.css';
+
+.box{
+  vertical-align: bottom;
+  overflow: hidden;
+  background-size: cover;
+  margin: 0;
+  padding: 70px 0 0 0 ;
+  width: 100%;
+  height: 90%;
+  background-repeat: no-repeat;
+  background-image: url("../../assets/img/backgroud1.jpg");
+  position: absolute;
+}
+.chat {
+  display: block;
+  padding: 0;
+  width: 1200px;
+  height: 750px;
+  border: 1px solid #dfdfdf;
+  margin: 0 auto 0 auto;
+  overflow: hidden;
+  border-radius: 9px;
+  box-shadow: 4px 4px 4px #dfdfdf;
+  position: relative;
+}
+
+.leftBox {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 750px;
+  width: 400px;
+  box-shadow: 1px 0 5px #dfdfdf;
+  background-color: #5E5E5E;
+}
+
+
+.rightBox {
+  background-color: #ECEFF0;
+  position: absolute;
+  width: 800px;
+  right: 0;
+  top: 0;
+  height: 750px;
+}
+
+.searchContact {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 75px
+}
+
+#searchContactInput {
+  outline: none;
+  display: block;
+  border: none;
+  margin: 20px auto 19px auto;
+  letter-spacing: 1px;
+  border-radius: 2px;
+  background-color: #777777;
+  color: #dfdfdf;
+  font-size: 19px;
+  padding: 7px 10px;
+  width: 326px;
+}
+
+#searchContactInput:-ms-input-placeholder {
+  color: #dfdfdf;
+}
+
+/* Internet Explorer 10+ */
+
+#searchContactInput::-webkit-input-placeholder {
+  color: #dfdfdf;
+}
+
+/* WebKit browsers */
+
+#searchContactInput::-moz-placeholder {
+  color: #dfdfdf;
+}
+
+/* Mozilla Firefox 4 to 18 */
+
+#searchContactInput:-moz-placeholder {
+  color: #dfdfdf;
+}
+
+#searchIcon {
+  cursor: pointer;
+  color: #dfdfdf;
+  position: absolute;
+  top: 16px;
+  left: 332px;
+  padding: 13px;
+}
+
+/* Mozilla Firefox 19+ */
+.contact {
+  height: 675px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 406px;
+  overflow-y: scroll;
+  scrollbar-face-color: #889B9F;
+  scrollbar-shadow-color: #3D5054;
+  scrollbar-highlight-color: #C3D6DA;
+  scrollbar-3dlight-color: #3D5054;
+  scrollbar-darkshadow-color: #85989C;
+  scrollbar-track-color: #95A6AA;
+  scrollbar-arrow-color: #FFD6DA;
+}
+.contact::-webkit-scrollbar { /*滚动条整体样式*/
+  width: 4px; /*高宽分别对应横竖滚动条的尺寸*/
+  height: 4px;
+}
+
+.contact::-webkit-scrollbar-thumb { /*滚动条里面小方块*/
+  border-radius: 5px;
+  /*-webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);*/
+  -webkit-box-shadow: inset 0 0 5px #dfdfdf;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.contact::-webkit-scrollbar-track { /*滚动条里面轨道*/
+  /*-webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);*/
+  /*-webkit-box-shadow: inset 0 0 5px #dfdfdf;*/
+  border-radius: 0;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.contactPeople {
+  transition: background-color 0.25s;
+  -moz-transition: background-color 0.25s; /* Firefox 4 */
+  -webkit-transition: background-color 0.25s; /* Safari 和 Chrome */
+  -o-transition: background-color 0.25s; /* Opera */
+  border-collapse: collapse;
+  overflow: hidden;
+  display: table;
+  height: 90px;
+  width: 100%;
+}
+
+.contactPeople:hover {
+  cursor: pointer;
+  background-color: #808080;
+}
+
+.contactPeople:active {
+  cursor: pointer;
+  background-color: #777777;
+}
+
+.contactRow {
+  display: table-row;
+  width: 400px;
+  height: 80px;
+}
+
+.contactHeader {
+  display: table-cell;
+  width: 105px;
+  height: 80px;
+}
+
+.contactMessage {
+  vertical-align: top;
+  display: table-cell;
+  width: 295px;
+  height: 80px;
+  position: relative;
+}
+
+.contactMessageOnline {
+  color: #96BB00;
+  font-size: 10px;
+}
+
+.contactMessageOffline {
+  font-size: 10px;
+  color: #EE6911;
+}
+
+.header {
+  margin: 15px 15px 15px 30px;
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+}
+
+.contactName {
+  color: white;
+  margin: 25px 0 10px 0;
+  display: block;
+
+  font-size: 16px;
+}
+
+.contactMessageOnline, .contactMessageOffline {
+  display: inline-block;
+  margin: 0 10px 0 0;
+}
+
+.contactStatus {
+  font-size: 14px;
+  color: #C3D6DA;
+  display: inline;
+}
+
+/*右边部分*/
+.messageHeader {
+  box-shadow: 2px 0 6px #dfdfdf;
+  width: 800px;
+  border-collapse: collapse;
+  height: 75px;
+  display: table;
+}
+
+.messageHeaderRow {
+  width: 800px;
+  display: table-row;
+}
+
+.messageHeaderRow div {
+  vertical-align: top;
+  display: table-cell;
+}
+
+.messageHeaderImg {
+  width: 100px;
+}
+
+.messageHeaderImg img {
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+  margin: 15px 10px 15px 30px;
+}
+
+.messageHeaderIcon {
+  width: 600px;
+}
+
+.messageHeaderIcon {
+  width: 100px;
+}
+
+#statusName {
+  font-size: 17px;
+  letter-spacing: 1px;
+  margin: 25px 0 10px 5px;
+}
+
+#statusLatestSendTime {
+  font-size: 15px;
+  color: #999999;
+  letter-spacing: 1px;
+  margin: 10px 0 15px 5px;
+}
+
+.HeaderIconOnline {
+  display: inline-block;
+  margin: 41px 10px 0 0;
+  color: #96BB00;
+}
+
+.HeaderIconOffline {
+  display: inline-block;
+  margin: 41px 10px 0 0;
+  color: #EE6911;
+}
+
+.messageHeaderIconStatus {
+  display: inline-block;
+}
+
+.messageBox {
+  overflow-y: scroll;
+  height: 430px;
+  width: 808px;
+  border-bottom: 1px solid #dfdfdf;
+}
+
+/*这个样式是从网上参考资料得到的*/
+.messageBox::-webkit-scrollbar { /*滚动条整体样式*/
+  width: 4px; /*高宽分别对应横竖滚动条的尺寸*/
+  height: 4px;
+}
+
+.messageBox::-webkit-scrollbar-thumb { /*滚动条里面小方块*/
+  border-radius: 5px;
+  /*-webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);*/
+  -webkit-box-shadow: inset 0 0 5px #dfdfdf;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.messageBox::-webkit-scrollbar-track { /*滚动条里面轨道*/
+  /*-webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);*/
+  /*-webkit-box-shadow: inset 0 0 5px #dfdfdf;*/
+  border-radius: 0;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.messageInputBox {
+  box-shadow: 0 -2px 4px #dfdfdf;
+  height: 225px;
+  width: 800px;
+}
+
+#messageInput {
+  letter-spacing: 1px;
+  font-size: 20px;
+  border: none;
+  outline: none;
+  width: 760px;
+  padding: 20px 20px 10px 20px;
+  height: 160px;
+  background: none;
+  overflow: hidden;
+}
+
+#messageInputMenu {
+  height: 33px;
+}
+
+#messageInputMenuPhotoIcon {
+  font-size: 17px;
+  color: #5E5E5E;
+  cursor: pointer;
+  margin-left: 20px;
+  padding: 6px 10px 7px 10px;
+  border-radius: 3px;
+  transition: color 0.15s;
+}
+
+#messageInputMenuPhotoIcon:hover {
+  color: #333333;
+}
+
+#messageInputMenuPhotoIcon:active {
+  color: #96BB00;
+}
+
+#submitButton {
+  cursor: pointer;
+  color: #3D5054;
+  outline: none;
+  float: right;
+  padding: 5px 24px 5px 24px;
+  border: 2px solid #dfdfdf;
+  background: none;
+  border-radius: 8px;
+  margin-right: 10px;
+  transition: background-color 0.2s;
+}
+
+#submitButton:hover {
+  background-color: #96BB00;
+  color: white;
+}
+
+#submitButton:active {
+  background-color: #999900;
+}
+
+/*聊天框*/
+.msgSender {
+  padding-left: 20px;
+  display: block;
+  width: 776px;
+  margin: 20px 0;
+  height: auto;
+  min-height: 100px;
+}
+
+.msgSenderInformation {
+  display: table;
+  border-collapse: collapse;
+  height: 60px;
+}
+
+.msgSenderInformationRow {
+  display: table-row;
+  height: 60px;
+}
+
+.msgSenderInformationCell {
+  vertical-align: top;
+  display: table-cell;
+  height: 60px;
+}
+
+.msgSenderInformationCellImg {
+  padding: 0 10px 0 5px;
+}
+
+.msgSenderInformationCellImg img {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+}
+
+.msgSenderInformationCellInformation {
+}
+
+
+.msgSenderName {
+  font-size: 14px;
+  margin: 7px 0 7px 0;
+  display: block;
+}
+
+.msgSenderDate {
+  font-size: 13px;
+  color: #85989C;
+  display: block;
+}
+
+.megSenderBody {
+  display: inline-block;
+  height: auto;
+  min-height: 18px;
+  width: auto;
+  min-width: 50px;
+  max-width: 400px;
+  margin: 5px 0 10px 10px;
+  border-radius: 15px;
+  background-color: #70b96b;
+  padding: 10px 20px;
+}
+
+.senderMsg {
+  font-size: 16px;
+  letter-spacing: 1px;
+  color: white;
+  /*megSenderBody的宽度减去40px*/
+  max-width: 360px;
+  height: auto;
+}
+
+.msgReceiver {
+  display: block;
+  width: 776px;
+  margin: 20px 0;
+  height: auto;
+  min-height: 100px;
+
+  padding-right: 20px;
+}
+
+.msgVacant {
+  width: 555px;
+}
+
+.msgReceiverInformation {
+  display: table;
+}
+
+.msgReceiverInformationRow {
+  display: table-row;
+}
+
+.msgReceiverInformationCell {
+  text-align: right;
+  vertical-align: top;
+  display: table-cell
+}
+
+.msgSenderInformationCellImg img {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  padding: 0 5px 0 10px;
+}
+
+.megReceiverBody {
+  float: right;
+  background-color: #8dB0de;
+  min-width: 50px;
+  min-height: 18px;
+  max-width: 400px;
+  margin: 5px 10px 10px 0;
+  padding: 10px 20px;
+  border-radius: 15px;
+  font-size: 16px;
+  letter-spacing: 1px;
+  color: white;
+}
+
+/*对图片进行等比缩放等设置*/
+
+.megReceiverBody.imgBoxer {
+  max-width: 400px;
+  height: auto;
+}
+
+.megReceiverBody .imgBoxer img {
+  max-width: 400px;
+  height: auto;
+}
+
+.megSenderBody.imgBoxer {
+  max-width: 400px;
+  height: auto;
+}
+
+.megSenderBody .imgBoxer img {
+  max-width: 400px;
+  height: auto;
+}
+.clearFloat{
+  clear: both;
+}
+
+.unreadMessage{
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  right: 20px;
+  top: 40px;
+  background-color: orange;
+  border-radius: 5px;
+}
+
+#imgFile{
+  display: none;
+}
+
+#imgNameStatus{
+  cursor: default;
+  display: inline-block;
+  color: #3D5054;
+  font-size: 14px;
+}
+
+/*底部菜单栏*/
+.bottomMenu{
+  padding: 2px 0 0 0;
+  background-color: #777777;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 32px;
+  transition: background-color 0.4s;
+  -moz-transition: background-color 0.4s; /* Firefox 4 */
+  -webkit-transition: background-color 0.4s; /* Safari 和 Chrome */
+  -o-transition: background-color 0.4s; /* Opera */
+}
+
+.bottomMenu:hover{
+  box-shadow: -1px 0 2px 4px #dfdfdf;
+  background-color: #5E5E5E;
+}
+
+.bottomLeft{
+  display: inline-block;
+  color: white;
+  padding: 1px 10px;
+}
+
+.bottomLeftBox{
+  margin: 0 5px;
+  vertical-align: top;
+  display: inline-block;
+}
+
+#leftBoxHeader{
+  padding: 2px;
+  height: 26px;
+  width: 26px;
+  border-radius: 5px;
+}
+
+#bottomLeftBoxName,
+.bottomLeftBoxStatus_online,
+.bottomLeftBoxStatus_offline {
+  transition: 0.15s;
+  cursor: default;
+  display: inline-block;
+  font-size: 15px;
+  padding-top: 5px;
+}
+
+#bottomLeftBoxName:hover,
+.bottomLeftBoxStatus_online:hover,
+.bottomLeftBoxStatus_offline:hover {
+  color: #85989C;
+}
+
+.bottomLeftBoxStatusDot_offline,
+.bottomLeftBoxStatusDot_online {
+  margin-right: 10px;
+  cursor: default;
+  width: 6px;
+  height: 6px;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+.bottomLeftBoxStatusDot_online {
+  background-color: #70b96b;
+}
+
+.bottomLeftBoxStatusDot_offline{
+  background-color: orange;
+}
+
+/*右边*/
+.bottomRight {
+  display: inline-block;
+  vertical-align: top;
+  float: right;
+  color: white;
+}
+
+.bottomRightBox {
+  transition: color 0.1s;
+  height: 22px;
+  padding: 0 5px;
+  cursor: pointer;
+  margin: 5px 5px;
+  display: inline-block;
+}
+
+.bottomRightBox p{
+  letter-spacing: 0.1em;
+  padding: 0 5px;
+  display: inline-block;
+}
+
+.bottomRightBox:hover {
+  color: orange;
+}
+
+.bottomRightBox:active {
+  color: brown;
+}

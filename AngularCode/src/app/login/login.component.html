@@ -1,0 +1,81 @@
+<div class="box">
+  <div class="login-boxer">
+  <div class="login-boxer-container" id="login-logo-container">
+    <div class="login-boxer-container-row">
+
+      <div class="login-boxer-container-cell">
+        <img src="../../assets/front/img/maLiAo.jpg" alt="登录页面" id="login-logo">
+      </div>
+
+      <div class="login-boxer-container-cell" id="login-boxer-p">
+        <p>vancece</p>
+        <p>.COM</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="changeMethodBox">
+    <div class="changeMethodBoxRow">
+      <div class="changeMethodBoxCell">
+        <a [routerLink]="['/login']">登录页面</a>
+      </div>
+      <div class="changeMethodBoxCell">
+        <a [routerLink]="['/register']">注册页面</a>
+      </div>
+    </div>
+  </div>
+
+  <form action="">
+    <div class="login-boxer-container">
+      <label for="login-boxer-userName">
+        <i class="fa fa-user-o" aria-hidden="true"></i>&nbsp;用户名
+      </label>
+      <input type="text" id="login-boxer-userName" maxlength="15" minlength="4" required=""
+             [(ngModel)]="inputData.name"
+             name="name" (ngModelChange)="checkUser()">
+      <p class="input-tips">{{inputStatus.name}}</p>
+    </div>
+
+    <div class="login-boxer-container">
+      <label for="login-boxer-passWord">
+        <i class="fa fa-unlock-alt" aria-hidden="true"></i>&nbsp;密码
+      </label>
+      <input type="password" id="login-boxer-passWord" maxlength="18" minlength="6" required=""
+             [(ngModel)]="inputData.password" name="password" (ngModelChange)="checkPassword()">
+      <p class="input-tips">{{inputStatus.password}}</p>
+    </div>
+
+    <div class="login-boxer-container" id="login-check-box">
+      <label for="login-boxer-checkCode">
+        <i class="fa fa-male"></i>&nbsp;验证码
+      </label>
+      <input type="text" id="login-boxer-checkCode" maxlength="4" minlength="4" required="" name="code"
+             [(ngModel)]="inputData.checkCode" (ngModelChange)="checkCode()">
+      <p class="input-tips">{{inputStatus.checkCode}}</p>
+    </div>
+
+    <!--    验证码-->
+    <div id="verificationCode" class="codeimg">
+      <canvas width="100" height="43" id="verifyCanvas"></canvas>
+      <img id="code_img" alt="点击更改验证码" src="" (click)="createRandom()">
+    </div>
+    ​
+    <div class="login-boxer-container">
+      <label for="autoLoginCheckBox">自动登录</label>
+      <input type="checkbox" id="autoLoginCheckBox" (change)="processAutoLogin()" checked="checked">
+    </div>
+
+    <div id="input-firstLine"></div>
+    <div id="input-secondLine"></div>
+    <div id="input-thirdLine"></div>
+
+    <div class="login-boxer-container">
+      <button id="input-button" (click)="doCheckAndSend()">登录</button>
+    </div>
+  </form>
+</div>
+</div>
+<div class="bottomMessage">
+  <p class="valueNum"><a href="http://beian.miit.gov.cn">粤ICP备20004649号</a></p>
+  <button class="toAdmin" (click)="jumpToAdmin()">管理界面</button>
+</div>
